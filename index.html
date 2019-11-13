@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Exercice Wargnier</title>
+</head>
+<body>
+    <div class="vignette">
+
+    <navbar> 
+        <div class="navbar">
+          <button id="menu" onclick="menu()">M E N U</button>
+              <div id="menu-content">
+                <div class="crossmenu" onclick="menunone()"><i class="fas fa-times"></i></div>
+                <div class="menu-item">
+                    <a href="#">Lien 1</a>
+                    <a href="#">Lien 2</a>
+                </div>
+              </div>
+          
+          <img class="logo" src="img/logo.jpg"></img>
+
+            
+          <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">E S P A C E
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="#">S'inscrire</a>
+              <a href="#">S'identifier</a>
+            </div>
+            </div> 
+          </div>
+        
+    </navbar>
+
+    <h1 class="h1">S H E L B Y</h1>
+
+    <div class="para">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquam magna ac aliquet molestie. 
+      Suspendisse a feugiat lectus, et fermentum lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+      Aliquam erat volutpat. Praesent mattis elementum magna sed faucibus. 
+      Duis id ante vel velit sollicitudin pulvinar eu vitae elit. 
+      Etiam eget nulla accumsan, finibus tellus sed, elementum nisl. 
+      Maecenas elementum orci sit amet nulla maximus, id dapibus nibh semper. 
+      Duis sed posuere lorem, sit amet aliquet odio. 
+      Phasellus nec facilisis magna.</p>
+    </div>
+
+      <img class="voiture" src="img/shelby-int.png"> <br><br><br>
+
+    <div class="mustang" class="mustvign">
+          <div class="must"><img class="mustimg" src="img/mustang.jpg"></div>
+          <div class="mustp">
+            <h2>M U S T A N G</h2>
+            <p>Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme 
+              assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.<br>
+            </div></p>
+            
+    </div>
+
+    <div class="anim3">
+      <div onclick="changement()">
+        <p>Une voiture de marque audi</p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+      
+      function dropdownclick(){
+           document.getElementById('dropdown-content').classList.remove("affichagenone");
+       } 
+       function dropdownclickremove(){
+        document.getElementById('dropdown-content').classList.add("affichagenone");
+       }
+
+       function menu(){
+        document.getElementById('menu-content').classList.remove("affmenunone");
+      }
+
+      var tab=["mustang","shelby","ford","renault","peugeot","ferrari"];
+      var compteur = 0;
+      function changement(){
+          document.getElementById('random').inerHTML = tab[compteur];
+          compteur ++ ;
+        if (compteur == 6){
+          compteur = 0;
+        };
+      };
+      setInterval(changemot,2000); 
+    
+        </script>
+
+
+      
+      
+</body>
+</html>
